@@ -29,30 +29,32 @@ class Login extends React.Component {
     const { userName, isloading, redirect } = this.state;
     return (
       <div data-testid="page-login">
-        <h3>Login</h3>
         { isloading ? <Loading /> : (
-          <form>
-            <label htmlFor="userName">
-              Nome:
-              <input
-                type="text"
-                data-testid="login-name-input"
-                onChange={ (event) => {
-                  this.setState({
-                    userName: event.target.value,
-                  });
-                } }
-              />
-            </label>
-            <button
-              type="submit"
-              data-testid="login-submit-button"
-              disabled={ userName.length < +'3' }
-              onClick={ this.getUserName }
-            >
-              Entrar
-            </button>
-          </form>
+          <section>
+            <h3>Loading</h3>
+            <form>
+              <label htmlFor="userName">
+                Nome:
+                <input
+                  type="text"
+                  data-testid="login-name-input"
+                  onChange={ (event) => {
+                    this.setState({
+                      userName: event.target.value,
+                    });
+                  } }
+                />
+              </label>
+              <button
+                type="submit"
+                data-testid="login-submit-button"
+                disabled={ userName.length < +'3' }
+                onClick={ this.getUserName }
+              >
+                Entrar
+              </button>
+            </form>
+          </section>
         ) }
         { redirect && <Redirect to="/search" /> }
       </div>
