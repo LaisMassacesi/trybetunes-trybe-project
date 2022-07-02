@@ -6,7 +6,7 @@ class Search extends React.Component {
     return (
       <div data-testid="page-search">
         <Header />
-        <h3>Search</h3>
+        <h3 data-testid="page-search">Search</h3>
       </div>
     );
   }

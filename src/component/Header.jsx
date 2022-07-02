@@ -24,7 +24,8 @@ class Header extends React.Component {
     const { loading, userName } = this.state;
     return (
       <header data-testid="header-component">
-        { loading ? <Loading /> : <h3>{ userName }</h3> }
+        { loading
+          ? <Loading /> : <header data-testid="header-user-name">{ userName }</header> }
       </header>
     );
   }
