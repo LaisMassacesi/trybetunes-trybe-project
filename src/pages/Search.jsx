@@ -1,11 +1,15 @@
 import React from 'react';
+import AlbumCard from '../component/AlbumCard';
 import Header from '../component/Header';
+import searchAlbumsAPI from '../services/searchAlbumsAPI';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       searchArtist: '',
+      search: [],
+      reserveArtistName: '',
     };
   }
 
@@ -15,12 +19,24 @@ class Search extends React.Component {
     });
   }
 
-  render() {
+  handleClick = async () => {
     const { searchArtist } = this.state;
+    this.setState({
+      search: await searchAlbumsAPI(searchArtist),
+      reserveArtistName: searchArtist,
+    }, () => {
+      this.setState({
+        searchArtist: '',
+      });
+    });
+  }
+
+  render() {
+    const { searchArtist, search, reserveArtistName } = this.state;
     return (
       <div data-testid="page-search">
         <Header />
-        <h3>Search</h3>
+        <h2>Search</h2>
         <form>
           <input
             type="text"
@@ -33,10 +49,25 @@ class Search extends React.Component {
             type="submit"
             data-testid="search-artist-button"
             disabled={ searchArtist.length < 2 }
+            onClick={ (event) => {
+              event.preventDefault();
+              this.handleClick();
+            } }
           >
             Pesquisar
           </button>
         </form>
+        { search !== []
+          ? <h3>{ `Resultado de álbuns de: ${reserveArtistName}` }</h3> : '' }
+        { search.length === 0
+          ? <span>Nenhum álbum foi encontrado</span>
+          : search.map((album, indice) => (
+            <AlbumCard
+              key={ indice }
+              { ...album }
+              searchArtist={ searchArtist }
+            />
+          )) }
       </div>
     );
   }
