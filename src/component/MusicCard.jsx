@@ -23,7 +23,7 @@ class MusicCard extends React.Component {
     const { response } = this.props;
     const { getMusicsData } = this.state;
     return (
-      <div data-testid="page-album">
+      <div>
         {response.map((obj) => {
           if (response.indexOf(obj) === 0) return '';
           return (
