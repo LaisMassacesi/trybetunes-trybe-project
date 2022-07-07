@@ -13,7 +13,7 @@ class MusicCard extends React.Component {
   }
 
   getMusicsResponse = async () => {
-    const { id } = this.props.match.params
+    const { match: { params: { id } } } = this.props;
     this.setState({
       getMusicsData: await getMusics(id),
     });
@@ -53,6 +53,8 @@ class MusicCard extends React.Component {
 
 MusicCard.propTypes = {
   response: propTypes.arrayOf(propTypes.array).isRequired,
+  match: propTypes.objectOf(propTypes.object).isRequired,
+  params: propTypes.objectOf(propTypes.object).isRequired,
 };
 
 export default MusicCard;
