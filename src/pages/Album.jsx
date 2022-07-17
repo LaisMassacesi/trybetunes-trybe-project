@@ -20,7 +20,7 @@ class Album extends React.Component {
 
   componentDidMount() {
     this.getMusicsResponse();
-    this.verifyFavoriteSongs();
+    // this.verifyFavoriteSongs();
   }
 
   isFavoriteSong = async (id) => {
@@ -75,7 +75,7 @@ class Album extends React.Component {
       await addSong(music);
     }
     this.setState({ isLoading: false });
-    this.verifyFavoriteSongs();
+    // this.verifyFavoriteSongs();
   }
 
   render() {

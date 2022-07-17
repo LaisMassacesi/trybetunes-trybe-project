@@ -19,7 +19,6 @@ class MusicCard extends React.Component {
   setStateFavorite = async () => {
     const { isFavorite, trackIdValue } = this.props;
     const response = await isFavorite(trackIdValue);
-    console.log(response);
     this.setState({
       isFavoriteSong: response,
       isLoading: false,
@@ -33,7 +32,6 @@ class MusicCard extends React.Component {
       trackIdValue,
       trackNameValue,
       handleInputChange,
-      // isFavorite,
     } = this.props;
     const { isLoading, isFavoriteSong } = this.state;
     return (
@@ -69,7 +67,6 @@ MusicCard.propTypes = {
   amgArtistIdValue: propTypes.number.isRequired,
   handleInputChange: propTypes.func.isRequired,
   isFavorite: propTypes.func.isRequired,
-
 };
 
 export default MusicCard;
