@@ -1,9 +1,8 @@
 import React from 'react';
 import Header from '../component/Header';
 import MusicCard from '../component/MusicCard';
-import getMusics from '../services/musicsAPI';
 import Loading from './Loading';
-import { getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI'
+import { getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 
 class Favorites extends React.Component {
   constructor(props) {
@@ -17,7 +16,6 @@ class Favorites extends React.Component {
 
   componentDidMount() {
     this.getFavoriteSongsData();
-    // this.getMusicsData();
   }
 
   getFavoriteSongsData = async () => {
@@ -35,19 +33,20 @@ class Favorites extends React.Component {
   }
 
   handleInputChange = async (event) => {
-    // const { allFavs } = this.state;
+    const { allFavs } = this.state;
     this.setState({ isLoading: true });
     const musicId = event.target.id;
 
-    const musicObj = await getMusics(musicId);
-    await removeSong(musicObj[0]);
+    const musicObj = allFavs.find((obj) => obj.trackId === +musicId);
+    // const musicObj = await getMusics(musicId);
+    await removeSong(musicObj);
 
-    this.setState({ isLoading: true });
-
-    const awaitFavs = await getFavoriteSongs();
-    this.setState({ allFavs: awaitFavs });
-
-    this.setState({ isLoading: false });
+    const updateFavs = allFavs.filter((song) => song.trackId !== +musicId);
+    console.log(updateFavs);
+    this.setState({
+      allFavs: updateFavs,
+      isLoading: false,
+    });
   }
 
   render() {
