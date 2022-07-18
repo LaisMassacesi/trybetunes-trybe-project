@@ -38,7 +38,6 @@ class Favorites extends React.Component {
     const musicId = event.target.id;
 
     const musicObj = allFavs.find((obj) => obj.trackId === +musicId);
-    // const musicObj = await getMusics(musicId);
     await removeSong(musicObj);
 
     const updateFavs = allFavs.filter((song) => song.trackId !== +musicId);
