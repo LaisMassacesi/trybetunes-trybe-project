@@ -32,7 +32,7 @@ class Profile extends React.Component {
       isLoading,
     } = this.state;
     return (
-      <div data-testid="page-profile-edit">
+      <div data-testid="page-profile">
         { isLoading ? <Loading /> : (
           <div>
             <Header />
