@@ -41,7 +41,6 @@ class Favorites extends React.Component {
     await removeSong(musicObj);
 
     const updateFavs = allFavs.filter((song) => song.trackId !== +musicId);
-    console.log(updateFavs);
     this.setState({
       allFavs: updateFavs,
       isLoading: false,

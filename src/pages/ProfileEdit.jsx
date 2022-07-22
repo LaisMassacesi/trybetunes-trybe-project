@@ -4,7 +4,7 @@ import Header from '../component/Header';
 class ProfileEdit extends React.Component {
   render() {
     return (
-      <div data-testid="page-profile-edit">
+      <div>
         <Header />
         <h3>Profile Edit</h3>
       </div>

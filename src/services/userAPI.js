@@ -19,6 +19,7 @@ const simulateRequest = (response) => (callback) => {
 };
 
 export const getUser = () => new Promise((resolve) => {
+  console.log('entrei na getUser');
   let user = readUser();
   if (user === null) {
     user = {};
