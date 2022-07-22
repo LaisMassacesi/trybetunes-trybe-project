@@ -38,7 +38,7 @@ class Profile extends React.Component {
             <Header />
             <h3>Profile</h3>
             <Link to="/profile/edit">Editar perfil</Link>
-            <h4 div data-testid="header-user-name">Nome</h4>
+            <h4 data-testid="header-user-name">Nome</h4>
             <p>{userData.name}</p>
             <h4>E-mail</h4>
             <p>{userData.email}</p>
