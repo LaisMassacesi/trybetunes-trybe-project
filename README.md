@@ -1,3 +1,30 @@
+# Wellcome to repository of Trybetunes project!:rocket:
+
+<h2>Trybe</h2>
+This ropository contains one project developed during my journey at Trybe.
+
+_"Trybe is a future school to any person who want to improve life and build a success career in technology, where the person only pay when they get a good job."_
+
+<h2>Trybetunes Project</h2>
+Trybetunes is a javascript aplication using React library where, consuming a API, i implemented functions of:
+
+- Login;
+- Search for a band or artist;
+- List available albums of this band or artist;
+- View songs from a selected album;
+- Play a sample of these songs from the album;
+- favorite and unfavorite songs;
+- View the list of favorite songs;
+- View the profile of a registered user;
+- Edit a profile;
+
+> Code that i developed:paperclips:
+- archives and folders in ./src/components
+- archives and folders in ./src/pages
+- archives and folders in ./src/service
+- archive ./app.js
+- archive ./index.js
+
 # Boas-vindas ao repositório do projeto Trybetunes!:rocket:
 
 <h2>Trybe</h2>
@@ -19,11 +46,11 @@ _"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vi
 - Editar o perfil da pessoa logada;
 
 > Código que desenvolvi :paperclips:
-- aquivos e pastas inseridos em component
-- aquivos e pastas inseridos em pages
-- aquivos e pastas inseridos em service
-- arquivo app.js
-- arquivo index.js
+- aquivos e pastas inseridos em ./src/component
+- aquivos e pastas inseridos em ./src/pages
+- aquivos e pastas inseridos em ./src/service
+- arquivo ./app.js
+- arquivo ./index.js
 
 <!-- Olá, Tryber!
 Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
