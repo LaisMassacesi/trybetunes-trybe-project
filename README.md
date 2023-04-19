@@ -1,4 +1,4 @@
-# Wellcome to repository of Trybetunes project!:rocket:
+# Welcome to repository of Trybetunes project!:rocket:
 
 <h2>Trybe</h2>
 This ropository contains one project developed during my journey at Trybe.
@@ -18,7 +18,7 @@ Trybetunes is a javascript aplication using React library where, consuming a API
 - View the profile of a registered user;
 - Edit a profile;
 
-> Code that i developed:paperclips:
+> Files with code i developed:paperclips:
 - archives and folders in ./src/components
 - archives and folders in ./src/pages
 - archives and folders in ./src/service
